@@ -1,0 +1,3 @@
+# GundamBotNext
+
+Une petite app web (Django mais avec une simple vue html) qui compte des jours...
