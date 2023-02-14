@@ -1,0 +1,142 @@
+{% comment %} <!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device_width, initial-scale=1.0">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>{% block title %}{% endblock %} | Gundam the Origin Counter</title>
+        <style>
+            body {
+              font-family: sans-serif;
+              text-align: center;
+              background-color: #f5f5f5;
+            }
+            h1 {
+              font-size: 36px;
+              margin-top: 50px;
+            }
+            #counter {
+              font-size: 96px;
+              font-weight: bold;
+              color: #ff6347;
+              margin: 50px auto;
+              text-shadow: 2px 2px 4px #000000;
+            }
+
+            #counter:hover {
+                color: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+                font-size: 96px;
+                font-weight: bold;
+                margin: 50px auto;
+                text-shadow: 2px 2px 4px #000000;
+              }
+          </style>
+    </head>
+
+    <body>
+        <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200">
+            <a href="/" class="text-xl font-semibold"> Est-ce que Gundam The Origin est édité en France ? </a>
+        </nav>
+        <div class="px-6 py-6">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <footer class="py-7 px-6 flex justify-between bg-gray-800">
+            <div class="w-2/3 pr-10">
+                <h3 class="mb-5 font-semibold text-gray-400">About</h3>
+
+                <p class="text-lg text-gray-500">Cher éditeurs, il ne vous reste plus qu'une chose à faire...</p>
+            </div>
+
+            <div class="w-1/3">
+                <h3 class="mb-5 font-semibold text-gray-400">Menu</h3>
+
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700">About</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+    <title>Gundam the Origin Counter</title>
+    <style>
+      /* Add responsive styles here */
+      /* Example: */
+      * {
+        box-sizing: border-box;
+      }
+      .header {
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 20px;
+      }
+      .footer {
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 20px;
+      }
+      .p {
+        text-align: center;
+        padding: 20px;
+      }
+      @media screen and (max-width: 600px) {
+        /* Add responsive styles for smaller screens here */
+        /* Example: */
+        .header, .footer {
+          padding: 10px;
+        }
+      }
+
+    #counter {
+        font-size: 96px;
+        font-weight: bold;
+        color: blue;
+        background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        margin: 50px auto;
+        text-align: center;
+        animation-name: change-color, grow-shrink, expand;
+        animation-duration: 8s, 5s, 5s;
+        animation-iteration-count: infinite;
+        }
+
+    @keyframes change-color {
+        25% { color: #00A4BD; }
+        50% { color: #FF7A59; }
+        75% { color: #00BDA5; }
+        }
+        
+    @keyframes grow-shrink {
+    50% { transform: scale(1.5); }
+    }
+    
+    @keyframes expand {
+    50% { word-spacing: 20px; }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Est-ce que Gundam The Origin est édité en France ?</h1>
+    </div>
+    <div class="content">
+      <h2 class="p">Non ! Voici le nombre de jours passés sans voir ce fabuleux manga :</p>
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div class="footer">
+        <p class="text-lg text-gray-500">Cher éditeurs, il ne vous reste plus qu'une chose à faire...</p>
+    </div>
+  </body>
+</html>

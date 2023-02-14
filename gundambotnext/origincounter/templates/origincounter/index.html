@@ -1,0 +1,18 @@
+{% extends 'origincounter/base.html'%}
+
+{% block title %} Welcome !{% endblock %}
+
+{% block content %}
+    <p id="counter"></p>
+    
+    <script>
+      const date1 = new Date('October 8, 2019 00:00:00');
+      const date2 = new Date();
+      
+      const diffTime = Math.abs(date2 - date1);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      
+      const counter = document.getElementById('counter');
+      counter.innerText = diffDays + " jours";
+    </script>
+{% endblock %}
