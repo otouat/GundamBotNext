@@ -1,0 +1,129 @@
+/* Global CSS variables */
+:root {
+    --spacing-company: 3rem;
+    --font-weight: 400;
+    --border-radius: 0;
+}
+
+/* Typography */
+h2,
+h3,
+hgroup> :last-child {
+    font-weight: 200;
+}
+
+small {
+    color: var(--muted-color);
+}
+
+/* Header */
+.hero {
+    background-color: #394046;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('img/ms-gundam-origin-manga-visual-3.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+header {
+    padding: var(--spacing-company) 0;
+}
+
+header hgroup> :last-child {
+    color: var(--h3-color);
+}
+
+header hgroup {
+    margin-bottom: var(--spacing-company);
+}
+
+/* Nav */
+summary[role="link"].contrast:is([aria-current], :hover, :active, :focus) {
+    background-color: transparent;
+    color: var(--contrast-hover);
+}
+
+/* Main */
+@media (min-width: 992px) {
+    main .grid {
+        grid-column-gap: var(--spacing-company);
+        grid-template-columns: auto 25%;
+    }
+}
+
+form.grid {
+    grid-row-gap: 0;
+}
+
+/* Aside nav */
+aside img {
+    margin-bottom: 0.25rem;
+}
+
+aside p {
+    margin-bottom: var(--spacing-company);
+    line-height: 1.25;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    text-align: center;
+
+}
+
+
+/* .hover {
+    box-shadow: inset 0 0 0 0 #54b3d6;
+    color: #54b3d6;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+} */
+
+.hover  {
+    color: var(--h3-color);
+    position: relative;
+    text-decoration: none;
+}
+
+
+.hover::before {
+    background: #6089a8;
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+.hover:hover {
+    color: #fff; /* Replace with the desired color value */
+    transition-delay: 0.2s; 
+}
+
+.hover:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+h3 {
+    font-size: 3rem;
+    margin: 0;
+    cursor: pointer;
+    padding: 0 .1em;
+    font-weight: 500;
+}
+
+p {
+    text-align: center;
+    padding: 0 .1em;
+}
+
+footer {
+    text-align: center;
+    padding: 0 .1em;
+}

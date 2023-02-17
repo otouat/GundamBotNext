@@ -3,9 +3,9 @@
 {% block title %} Welcome !{% endblock %}
 
 {% block content %}
-    <p id="counter"></p>
-    
-    <script>
+    <div class="parent">
+
+    <h3 class="hover" id="counter"></h3><script>
       const date1 = new Date('October 8, 2019 00:00:00');
       const date2 = new Date();
       
@@ -15,4 +15,8 @@
       const counter = document.getElementById('counter');
       counter.innerText = diffDays + " jours";
     </script>
+
+    
+    
+    </div>
 {% endblock %}

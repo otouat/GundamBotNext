@@ -3,76 +3,65 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    <link rel="canonical" href="https://picocss.com/examples/basic-template/">
     <title>Gundam the Origin Counter</title>
-    <style>
-      /* Add responsive styles here */
-      /* Example: */
-      * {
-        box-sizing: border-box;
-      }
-      .header {
-        background-color: #f1f1f1;
-        text-align: center;
-        padding: 20px;
-      }
-      .footer {
-        background-color: #f1f1f1;
-        text-align: center;
-        padding: 20px;
-      }
-      .p {
-        text-align: center;
-        padding: 20px;
-      }
-      @media screen and (max-width: 600px) {
-        /* Add responsive styles for smaller screens here */
-        /* Example: */
-        .header, .footer {
-          padding: 10px;
-        }
-      }
-
-    #counter {
-        font-size: 96px;
-        font-weight: bold;
-        color: blue;
-        background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        margin: 50px auto;
-        text-align: center;
-        animation-name: change-color, grow-shrink, expand;
-        animation-duration: 8s, 5s, 5s;
-        animation-iteration-count: infinite;
-        }
-
-    @keyframes change-color {
-        25% { color: #00A4BD; }
-        50% { color: #FF7A59; }
-        75% { color: #00BDA5; }
-        }
-        
-    @keyframes grow-shrink {
-    50% { transform: scale(1.5); }
-    }
-    
-    @keyframes expand {
-    50% { word-spacing: 20px; }
-    }
-    </style>
+    <link rel="stylesheet" href="custom.css">
   </head>
   <body>
-    <div class="header">
-      <h1>Est-ce que Gundam The Origin est édité en France ?</h1>
+    <div class="hero" data-theme="dark">
+      <nav class="container-fluid">
+        <ul>
+          <a href="https://twitter.com/GundamBot2" class="contrast" aria-label="Twitter page"><svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="328 355 335 276" height="16px"><path d="
+            M 630, 425
+            A 195, 195 0 0 1 331, 600
+            A 142, 142 0 0 0 428, 570
+            A  70,  70 0 0 1 370, 523
+            A  70,  70 0 0 0 401, 521
+            A  70,  70 0 0 1 344, 455
+            A  70,  70 0 0 0 372, 460
+            A  70,  70 0 0 1 354, 370
+            A 195, 195 0 0 0 495, 442
+            A  67,  67 0 0 1 611, 380
+            A 117, 117 0 0 0 654, 363
+            A  65,  65 0 0 1 623, 401
+            A 117, 117 0 0 0 662, 390
+            A  65,  65 0 0 1 630, 425
+            Z"
+            fill="currentColor"/></svg></a>
+        </ul>
+        <ul>
+          <li>
+            <details role="list" dir="rtl">
+              <summary aria-haspopup="listbox" role="link" class="contrast">Theme</summary>
+              <ul role="listbox">
+                <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+                <li><a href="#" data-theme-switcher="light">Light</a></li>
+                <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+      <header class="container">
+        <hgroup>
+          <h1><strong>Est-ce que Gundam the Origin est édité en France ?</strong></h1>
+          <h2>Une petite application qui compte le nombre de jours sans nouvelles d'une reédition.</h2>
+        </hgroup>
+      </header>
     </div>
-    <div class="content">
-      <h2 class="p">Non ! Voici le nombre de jours passés sans voir ce fabuleux manga :</p>
-      {% block content %}
-      {% endblock %}
-    </div>
-    <div class="footer">
-        <p class="text-lg text-gray-500">Cher éditeurs, il ne vous reste plus qu'une chose à faire...</p>
-    </div>
+    <main class ="container">
+      <section id="Nombre de jour">
+      <p>Non ! Voici le nombre de jours passés sans voir ce fabuleux manga :</p>
+        {% block content %}
+        {% endblock %}
+      </section>
+      </main>
+    <footer class="container">
+      <small>
+        "Copyright © 2023 Yasuhiko Yoshikazu - Kadokawa Shoten. Tout droit réservés."
+      </small>
+    </footer>
+    <script src="https://picocss.com/examples/js/minimal-theme-switcher.js"></script>
   </body>
 </html>
